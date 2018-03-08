@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>重庆市货运企业安全风险管理系统</title>
+		<link rel="stylesheet" href="css/materialize.css" />
+		<link rel="stylesheet" type="text/css" href="css/modules/layer/default/layer.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+	</head>
+
+	<body>
+		<div class="left-nav">
+			<nav>
+				<ul>
+					<div class="users-block"></div>
+					<li class="users-active animated" onclick="page_1()">
+						<span style="">
+							<img src="images/主页.png" height="140%"/>
+						</span>
+						<font>首页</font>
+					</li>
+					<li class="animated" onclick="page_2()">
+						<span style="">
+							<img src="images/企业资料.png" height="140%"/>
+						</span>
+						<font>企业资料管理</font>
+					</li>
+					<li class="animated" onclick="page_3()">
+						<span style="">
+							<img src="images/法律法规.png" height="140%"/>
+						</span> 法律/管理制度
+					</li>
+					<li class="animated" onclick="page_4()">
+						<span style="">
+							<img src="images/应急计划.png" height="140%"/>
+						</span> 计划/应急救援
+					</li>
+					<li class="animated" onclick="page_5()">
+						<span style="">
+							<img src="images/警示信息.png" height="140%"/>
+						</span> 警示信息平台
+					</li>
+					<li class="animated" onclick="page_6()">
+						<span style="">
+							<img src="images/学习.png" height="140%"/>
+						</span> 远程学习平台
+					</li>
+					<li class="animated" onclick="page_7()">
+						<span style="">
+							<img src="images/台账.png" height="140%"/>
+						</span> 台账管理
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="top-nav">
+			<div>
+				<span class="animated bounceInDown" style="display: inline-block">重庆市货运企业安全风险管理系统</span>
+				<br />
+				<span class="animated fadeInLeftBig">重庆芸享实业有限公司</span>
+			</div>
+			<div>
+				<div class="right-btn">
+					<a class='dropdown-button' href='#' draggable="false" data-activates='dropdown1' data-beloworigin='true' data-constrainwidth='false'>
+						<img src="images/head-photo.png" draggable="false" height="50px" />
+						<font id="user_name">芸享</font>
+						<span class="fa fa-angle-down"></span>
+					</a>
+					<ul id='dropdown1' class='dropdown-content'>
+						<li>
+							<a href="#!" class="btn-block"><span class="fa fa-user fa-lg"></span>&nbsp;用户信息</a>
+						</li>
+						<li>
+							<a href="#!" class="btn-block"><span class="fa fa-lock fa-lg"></span>&nbsp;修改密码</a>
+						</li>
+						<!--<li class="divider"></li>-->
+						<li>
+							<a href="#!" class="btn-block"><span class="fa fa-book fa-lg"></span>&nbsp;操作手册</a>
+						</li>
+					</ul>
+					<span class="Separated"></span>
+					<span class="power-off">安全退出&nbsp;<span class="fa fa-power-off fa-lg"></span></span>
+				</div>
+			</div>
+		</div>
+		<div class="users-content" style="">
+			<iframe id="content" src="main1.html" height="100%" width="100%" frameborder="0" allowfullscreen></iframe>
+			<div class="users-message-hint">您的电脑分辨率太低，请切换更高的分辨率刷新页面！</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/materialize.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/topbar.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			topbar.show(); //显示度条
+			topbar.config({
+				autoRun:true,
+				barThickness: 3,
+				shadowBlur: 0
+			})
+			setTimeout(function(){
+				topbar.hide();
+			},1300);
+		})
+	</script>
+
+</html>

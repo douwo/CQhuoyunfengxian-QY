@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/materialize.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+		<link href="css/base.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main1.css">
+		<link rel="stylesheet" type="text/css" href="css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/liMarquee.css" />
+		<style type="text/css">
+			.one-card ul li,
+			.users-color,
+			.one-card ul li img {
+				transition: all 0.3s ease-in-out;
+			}
+			
+			.users-color {
+				color: #ddd;
+				box-shadow: none;
+			}
+			
+			.users-scale {
+				transform: translateY(-10px);
+				transition: 0.1s all ease-out !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="">
+			<div id="bd">
+				<div class="bd-content">
+					<div class="center-part">
+						<div class="center-items todo">
+							<!--1-->
+							<div class="one-card" style="width: 25%;float: left;">
+								<ul class="work-items clearfix">
+									<li class="animated">
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color1">
+												<i class="iconfont"><img src="images/car.png"/></i>
+												<span class="num">10<span class="unit">辆</span></span>
+												<label>车辆总数</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color2">
+												<i class="iconfont"><img src="images/enrollment.png"/></i>
+												<span class="num">52<span class="unit">%</span></span>
+												<label>车辆上线率</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color3">
+												<i class="iconfont"><img src="images/person.png"/></i>
+												<span class="num">8<span class="unit">名</span></span>
+												<label>从业人员数</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color3">
+												<i class="iconfont"><img src="images/hidden.png"/></i>
+												<span title="" class="num">0<span class="unit">条</span></span>
+												<label>昨日告警数</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color4">
+												<i class="iconfont"><img src="images/alert.png"/></i>
+												<span title="" class="num">0<span class="unit">条</span></span>
+												<label>工作提示</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="work-inner">
+											<div class="work-item users-color users-font-color1">
+												<i class="iconfont"><img src="images/emergency.png"/></i>
+												<span class="num">29<span class="unit"></span></span>
+												<label>待办工作</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!--2-->
+							<div class="two-card">
+								<div class="center-items clearfix">
+									<div class="chart0-item" style="width: 100%;">
+										<div class="item-inner">
+											<div class="item-content">
+												<div class="content-hd">
+													<a class="dropdown-button" href='#' data-activates='dropdown2' data-constrainwidth='false'>
+														<span class="fa fa-caret-down grey-text"></span>
+														<span id="down_title" class="blue-text">动态车辆告警排名</span>
+													</a>
+													<ul id='dropdown2' class='dropdown-content'>
+														<li>
+															<a href="#!">动态车辆告警排名</a>
+														</li>
+														<li class="divider"></li>
+														<li>
+															<a href="#!">静态车辆告警排名</a>
+														</li>
+														<li class="divider"></li>
+														<li>
+															<a href="#!">静态从业人员告警排名</a>
+														</li>
+													</ul>
+												</div>
+												<div>
+													<table id="table2">
+														<tr>
+															<th id="th1" width="15%" align="center">名次</th>
+															<th id="th2" width="70%" align="center">车辆</th>
+															<th id="th3" width="15%" align="center">数量</th>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_1.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno0">綦江XX运输企业</td>
+															<td id="staticscore0">23</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_2.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454;" id="carno1">綦江XXX运输企业</td>
+															<td id="staticscore1">22</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_3.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno2">綦江XX运输企业</td>
+															<td id="staticscore2">21</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_4.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno3">綦江XXX运输企业</td>
+															<td id="staticscore3">19</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_5.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno4">綦江XX运输企业</td>
+															<td id="staticscore4">17</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_6.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno5">綦江XXX运输企业</td>
+															<td id="staticscore5">15</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_7.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno6">綦江XX运输企业</td>
+															<td id="staticscore6">12</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_8.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno7">綦江XXX运输企业</td>
+															<td id="staticscore7">12</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_9.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno8">綦江XX运输企业</td>
+															<td id="staticscore8">11</td>
+														</tr>
+														<tr>
+															<td>
+																<div style="background-image: url('images/1_10.png'); width: 20px; height: 24px; margin: 0 auto;"></div>
+															</td>
+															<td style="color: #545454" id="carno9">綦江XXX运输企业</td>
+															<td id="staticscore9">8</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--4-->
+							<div class="four-card">
+								<!--
+                        		公告window
+                        		-->
+								<div class="inform item-box">
+									<div class="inform-hd">
+										<label>公告</label>
+										<a href="javascript:;">更多<span>&gt;</span></a>
+									</div>
+									<div class="str2 str_wrap">
+										<ul>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2017年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-05</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2017年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-05</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2016年7-12月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2016年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年7-12月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年7-12月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1-6月全市安全生产事故情况</font>
+												</a>
+												<label>01-03</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1-3月全市安全生产事故情况</font>
+												</a>
+												<label>01-03</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-03</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis"><span></span>
+													<font title="关于2017年1-6月全市安全生产事故情况">关于2015年1月全市安全生产事故情况</font>
+												</a>
+												<label>01-01</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!--3-->
+							<div class="three-card">
+								<!--	公告window,法律法规与通知window -->
+								<div class="inform item-box">
+									<div id="pic" class="pic-no"></div>
+								</div>
+								<div class="price item-box">
+									<div class="inform-hd">
+										<label>法律法规与通知</label>
+										<a href="javascript:;">更多<span>&gt;</span></a>
+									</div>
+									<div class="str1 str_wrap" style="height: 152px;">
+										<ul>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-04</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-03</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-03</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-02</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-01</label>
+											</li>
+											<li>
+												<a href="javascript:;" class="ellipsis">
+													<span></span>
+													<font title="重庆市人民政府安全生产委员会交通安全办公室">重庆市人民政府安全生产委员会交通安全办公室</font>
+												</a>
+												<label>01-01</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="center-items chart1" style="">
+					<div class="chart1-inner">
+						<!--<div class="item-hd">最近30天告警趋势</div>-->
+						<div class="chart1-chart" id="MyChart"></div>
+						<div>
+							<button id="change-days" class="waves-effect btn green" type="button">按天统计</button>
+							<button id="change-months" class="waves-effect btn white blue-text" type="button">按月统计</button>
+							<button id="change-years" class="waves-effect btn white orange-text" type="button">按年统计</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/materialize.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" src="js/echarts-all.js"></script>
+			<script src="js/layui.all.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/jquery.liMarquee.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/main1.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+			</script>
+	</body>
+
+</html>
