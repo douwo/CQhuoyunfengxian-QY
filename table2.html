@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/materialize.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/materialize.js" type="text/javascript" charset="utf-8"></script>
+    <title>table</title>
+    <style>
+        input:not([type]),
+        input[type=text],
+        input[type=password],
+        input[type=email],
+        input[type=url],
+        input[type=time],
+        input[type=date],
+        input[type=datetime],
+        input[type=datetime-local],
+        input[type=tel],
+        input[type=number],
+        input[type=search],
+        textarea {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            border-radius: 0;
+            outline: none;
+            height: auto;
+            width: 100%;
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            box-sizing: content-box;
+            transition: all 0.3s;
+            height: 30px;
+        }
+
+        .tabs .tab a {
+            color: #666;
+        }
+
+        .tabs .tab a:hover {
+            color: #007CB6;
+        }
+
+        .active {
+            color: #007CB6 !important;
+        }
+
+        input[type=text]:focus:not([readonly]) {
+            border-bottom: 1px solid #007CB6 !important;
+            box-shadow: 0 1px 0 0 #007CB6 !important;
+        }
+
+        .indicator {
+            height: 5px !important;
+            background-color: #007CB6 !important;
+        }
+
+        .layui-laydate .layui-this {
+            background-color: #007CB6 !important;
+        }
+
+        .users-bottom-line {
+            border-bottom: #ccc 1px solid
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col s12 users-bottom-line">
+            <ul class="tabs">
+                <li class="tab">
+                    <a class="active" href="#test1">基本信息</a>
+                </li>
+                <li class="tab">
+                    <a class="" href="#test2">诚信考核</a>
+                </li>
+                <li class="tab">
+                    <a class="" href="#test3">驾驶证</a>
+                </li>
+                <li class="tab">
+                    <a class="" href="#test4">从业资格证</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="test1" class="">
+        <div class="row">
+            <div class="col s12">
+                <table class="kv-table" style="width: 60%; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td class="kv-label">姓名</td>
+                            <td class="kv-content d_name_td"></td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">文档编号</td>
+                            <td class="kv-content em_number"></td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">工作类型</td>
+                            <td class="kv-content em_t_type"></td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">手机号码</td>
+                            <td class="kv-content phone"></td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">身份证号</td>
+                            <td class="kv-content id_card"></td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">身份证正面图片地址</td>
+                            <td class="kv-content identity_just_pic">
+                                <a href="javascript:;">查看</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kv-label">身份证负面图片地址</td>
+                            <td class="kv-content identity_minus_pic">
+                                <a href="javascript:;">查看</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="test2" class="">
+        <table class="kv-table" style="width: 60%; margin: 0 auto;">
+            <tbody>
+                <tr>
+                    <td class="kv-label">诚信考核等级</td>
+                    <td class="kv-content assess_grade"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">诚信考核有效时间</td>
+                    <td class="kv-content start_end_time"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="test3" class="">
+        <table class="kv-table" style="width: 60%; margin: 0 auto;">
+            <tbody>
+                <tr>
+                    <td class="kv-label">准驾车型</td>
+                    <td class="kv-content vehicle_model"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">驾驶证号码</td>
+                    <td class="kv-content driving_number"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">初次领证日期</td>
+                    <td class="kv-content driving_annual_time"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">驾驶证有效期</td>
+                    <td class="kv-content driving_validity"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">驾驶证图片</td>
+                    <td class="kv-content driving_license_pic">
+                        <a href="javascript:;">查看</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="test4">
+        <table class="kv-table" style="width: 60%; margin: 0 auto;">
+            <tbody>
+                <tr>
+                    <td class="kv-label">从业资格证号</td>
+                    <td class="kv-content qualificationcode"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">从业范围</td>
+                    <td class="kv-content work_class"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">从业资格证发证日期</td>
+                    <td class="kv-content certificate_time"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">从业资格证有效期</td>
+                    <td class="kv-content q_validity"></td>
+                </tr>
+                <tr>
+                    <td class="kv-label">从业资格证图片</td>
+                    <td class="kv-content certificate_pic">
+                        <a href="javascript:;">查看</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
