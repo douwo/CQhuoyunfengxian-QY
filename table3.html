@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/materialize.css" />
+		<link rel="stylesheet" href="css/base.css">
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/materialize.js" type="text/javascript" charset="utf-8"></script>
+		<title>table</title>
+		<style>
+			input:not([type]),
+			input[type=text],
+			input[type=password],
+			input[type=email],
+			input[type=url],
+			input[type=time],
+			input[type=date],
+			input[type=datetime],
+			input[type=datetime-local],
+			input[type=tel],
+			input[type=number],
+			input[type=search],
+			textarea {
+				background-color: transparent;
+				border-radius: 0;
+				border: 1px solid #aaa !important;
+				outline: none;
+				height: auto;
+				width: 100%;
+				font-size: 1rem;
+				margin: 0;
+				padding: 0;
+				padding-left: 10px;
+				box-shadow: none !important;
+				box-sizing: content-box;
+				transition: all 0.3s;
+				height: 30px;
+			}
+			
+			.tabs .tab a {
+				color: #666;
+				padding: 0 8px;
+			}
+			
+			.tabs .tab a:hover {
+				color: #007CB6;
+			}
+			
+			.tabs .active {
+				color: #007CB6 !important;
+			}
+			
+			.indicator {
+				height: 5px !important;
+				background-color: #007CB6 !important;
+			}
+			
+			.layui-laydate .layui-this {
+				background-color: #007CB6 !important;
+			}
+			
+			.users-bottom-line {
+				border-bottom: #ccc 1px solid
+			}
+			
+			.picker__weekday-display {
+				background-color: #0078b6;
+			}
+			/*下拉框*/
+			
+			.select-wrapper input.select-dropdown {
+				height: 30px;
+				line-height: 30px;
+				margin: 0;
+				padding: 0 0 0 10px;
+			}
+			
+			.dropdown-content.select-dropdown>li {
+				min-height: 36px;
+				height: 36px;
+				line-height: 36px;
+			}
+			
+			.dropdown-content.select-dropdown>li>span {
+				line-height: 36px;
+				height: 36px;
+				padding: 0 10px;
+			}
+			
+			.select-wrapper {
+				width: 60%;
+				display: inline-block;
+			}
+			/*复选框*/
+			
+			[type="checkbox"]+label {
+				position: relative;
+				left: 15px;
+				padding-left: 25px;
+				line-height: 20px;
+			}
+			
+			.carTable01-title{
+				margin: 15px 0;text-align: center;font-size: 22px;color: #666;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row">
+			<div class="col s6">
+				<h2 class="carTable01-title">--车辆信息--</h2>
+				<div style="width: 50%;margin:15px">
+					<label style="font-size: 18px;">车辆：</label>
+					<select>
+						<option value="" disabled selected>请选择车辆</option>
+						<option value="1">车辆 1</option>
+						<option value="2">车辆 2</option>
+						<option value="3">车辆 3</option>
+					</select>
+				</div>
+				<div class="row">
+					<div class="col s12 users-bottom-line">
+						<ul class="tabs">
+							<li class="tab">
+								<a class="active" href="#test1">基本信息</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test2">道路运输证</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test3">保险</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test4">车辆参数</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test5">行驶证</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test6">保养</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test7">GPS安装和安全信息</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<form>
+					<div id="test1" class="">
+						<div class="row">
+							<div class="col s12">
+								<table class="kv-table" style="width: 60%; margin: 0 auto;">
+									<tbody>
+										<tr>
+											<td class="kv-label">车牌号</td>
+											<td class="kv-content car_no">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">文档编号</td>
+											<td class="kv-content">
+												<input type="text" class="" id="car_number" name="text">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车牌颜色</td>
+											<td class="kv-content">
+												<select>
+													<option value="" disabled selected>选择颜色</option>
+													<option value="1">黄</option>
+													<option value="2">蓝</option>
+												</select>
+												<input type="checkbox" class="filled-in" id="filled-in-box" />
+												<label for="filled-in-box">全选</label>
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">使用性质</td>
+											<td class="kv-content">
+												<input type="text" class="form-control" id="use_nature" name="use_nature" name="use_nature">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">发动机号码</td>
+											<td class="kv-content">
+												<input type="text" class="form-control" id="engine_no" name="engine_no" data-options="validType:'isNumber'">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车架号</td>
+											<td class="kv-content">
+												<input type="text" class="form-control" id="vin" name="vin" data-options="validType:'isNumber'">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">厂牌型号</td>
+											<td class="kv-content">
+												<input type="text" class="form-control" id="model" name="model">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车主关系</td>
+											<td class="kv-content">
+												<input type="text" class="form-control width400" id="car_t_type" name="car_t_type">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车辆挂靠合同图片</td>
+											<td class="kv-content">
+												<input type="button" onclick="javascript:changeUploadObj('affiliated_contract_file');$('#upPicBtn').show();$('#cancelPicBtn').hide();$('#uploadWin').dialog('open');" value="选择图片">
+												<input type="hidden" class="form-control" id="affiliated_contract_file" name="affiliated_contract_file">
+												<a id="affiliated_contract_file_a" href="javascript:;">查看</a>
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">核定载客人数</td>
+											<td class="kv-content">
+												<input type="text" class="form-control" id="seats" name="seats" data-options="validType:'integer'">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车辆类型</td>
+											<td class="kv-content">
+												<input id="vehicle_type" type="text" name="vehicle_type">
+											</td>
+										</tr>
+										<tr>
+											<td class="kv-label">车辆图片</td>
+											<td class="kv-content">
+												<input type="file" class="form-control" id="car_appear_pic" name="car_appear_pic_file">
+												<a id="car_appear_pic_a" href="javascript:;">查看</a>
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<div id="test2" class="">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">登记时间</td>
+								<td class="kv-content">
+									<input type="date" editable="false" class="datepicker" id="registration_time" name="registration_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">道路运输证发证时间</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="t_early_date" name="t_early_date">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">年审有效期至</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="annual_audit_time" name="annual_audit_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">运输证有效期至</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="t_validity" name="t_validity">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">车辆登记证</td>
+								<td class="kv-content">
+									<input type="button" onclick="javascript:changeUploadObj('car_pic');$('#upPicBtn').show();$('#cancelPicBtn').hide();$('#uploadWin').dialog('open');" value="选择图片">
+									<input type="hidden" class="form-control" id="car_pic" name="car_pic">
+									<!-- <input type="file"
+                            class="form-control" id="car_pic" name="car_pic_file"> -->
+									<a id="car_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">道路运输证号</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="t_no" name="t_no">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">道路运输证</td>
+								<td class="kv-content">
+									<input type="file" class="form-control" id="t_pic" name="t_pic_file">
+									<a id="t_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test3" class="">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">交强险保单号</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="traffic_insure_number" name="traffic_insure_number">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">交强险起保日期</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="traffic_start_time" name="traffic_start_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">交强险止保日期</td>
+								<td class="kv-content">
+									<input type="text" class="easyui-datebox" id="traffic_end_time" editable="false" name="traffic_end_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">交强险信息附件:</td>
+								<td class="kv-content">
+									<input type="file" class="form-control" id="traffic_pic" name="traffic_pic_file">
+									<a id="traffic_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">商业险保单号</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="commercial_insure_number" name="commercial_insure_number">
+								</td>
+							</tr>
+							<tr>
+
+								<td class="kv-label">商业险起保日期</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="commercial_start_time" name="commercial_start_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">商业险止保日期</td>
+								<td class="kv-content">
+									<input type="text" editable="false" class="easyui-datebox" id="commercial_end_time" name="commercial_end_time">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">商业险信息附件</td>
+								<td class="kv-content">
+									<input type="file" class="form-control" id="commercial_pic" name="commercial_pic_file">
+									<a id="commercial_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">第三责任险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="third_insurance_coverage" name="third_insurance_coverage">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">车损险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="chesun_coverage" name="chesun_coverage">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">乘坐险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="ride_coverage" name="ride_coverage">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">不计赔险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="regardless_coverage" name="regardless_coverage">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">全车盗抢险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="robbing" name="robbing">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">自燃损失险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="catacausis_insurance" name="catacausis_insurance">
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">车上货物责任险保额（万）</td>
+								<td class="kv-content">
+									<input type="text" class="form-control" id="cargo_liability" name="cargo_liability">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test4">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">限速</td>
+								<td class="kv-content"><input type="text" class="form-control" id="speed_limit" name="speed_limit"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">车辆尺寸长（毫米）</td>
+								<td class="kv-content"><input type="text" class="form-control" id="length" name="length"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">车辆尺寸宽（毫米）</td>
+								<td class="kv-content"><input type="text" class="form-control" id="wide" name="wide"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">车辆尺寸高（毫米）</td>
+								<td class="kv-content"><input type="text" class="form-control" id="high" name="high"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">制造商名称</td>
+								<td class="kv-content"><input type="text" class="form-control" id="maker_name" name="maker_name"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">总质量（千克）</td>
+								<td class="kv-content"><input type="text" class="form-control" id="totalMass" name="totalMass" autocomplete="off"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">核定载质量（千克）</td>
+								<td class="kv-content"><input type="text" class="form-control" id="quality" name="quality"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">排量</td>
+								<td class="kv-content"><input type="text" class="form-control" id="displacement" name="displacement"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">功率</td>
+								<td class="kv-content"><input type="text" class="form-control" id="power" name="power"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">车辆技术等级</td>
+								<td class="kv-content"><input type="text" class="form-control" id="technical_grade" name="technical_grade"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">技术等级评定时间</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="technical_grade_eval_time" name="technical_grade_eval_time"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">技术等级评定结果</td>
+								<td class="kv-content"><input type="text" class="form-control" id="technical_grade_eval_result" name="technical_grade_eval_result"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test5">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">行驶证编号</td>
+								<td class="kv-content"><input type="text" class="form-control" id="l_no" name="l_no"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">行驶证图片</td>
+								<td class="kv-content"><input type="file" class="form-control" id="l_pic" name="l_pic_file">
+									<a id="l_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">注册日期</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_early_date" name="l_early_date"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">有效期至</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_valid_for_time" name="l_valid_for_time"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">强制报废日期</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="l_validity" name="l_validity"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test6">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">最近二级维护日期</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="fm_time" name="fm_time"></td>
+							</tr>
+							<!-- <tr>
+                                <td class="kv-label">第二次二级维护日期</td>
+                                <td class="kv-content"><input type="text" editable="false"
+                                    class="easyui-datebox" id="t_fm_time" name="t_fm_time" ></td>
+                            </tr> -->
+							<tr>
+								<td class="kv-label">二级维护合格证</td>
+								<td class="kv-content"><input type="file" class="form-control" id="fm_pic" name="fm_pic_file">
+									<a id="fm_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">综合报告评级</td>
+								<td class="kv-content">
+									<select class="form-control" id="gradeSelect" name="grade">
+										<option selected="selected" value="">请选择</option>
+										<option value="1">优</option>
+										<option value="2">良</option>
+										<option value="3">合格</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test7">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">gps安装情况</td>
+								<td class="kv-content">
+									<select class="form-control" id="gps_is_install" name="gps_is_install" required="true" missingMessage="请选择GPS安装情况">
+										<option selected="selected" value="">请选择</option>
+										<option value="有">有</option>
+										<option value="无">无</option>
+									</select>
+								</td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS设备安装证明文件</td>
+								<td class="kv-content"><input type="file" class="form-control" id="gps_testify_pic" name="gps_testify_pic_file">
+									<a id="gps_testify_pic_a" href="javascript:;">查看</a>
+								</td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">通讯卡卡号</td>
+								<td class="kv-content"><input type="text" class="form-control" id="communication_card_no" name="communication_card_no"></td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS运营商</td>
+								<td class="kv-content"><input type="text" class="form-control" id="gps_operator" name="gps_operator"></td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS监控终端厂牌型号</td>
+								<td class="kv-content"><input type="text" class="form-control" id="gps_brand_model" name="gps_brand_model"></td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS监控终端安装时间</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_install_date" name="gps_install_date"></td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS接入时间</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_time" name="gps_time"></td>
+							</tr>
+							<tr class="hidTr">
+								<td class="kv-label">GPS有效期至</td>
+								<td class="kv-content"><input type="text" editable="false" class="easyui-datebox" id="gps_validity" name="gps_validity"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">是否有三角木</td>
+								<td class="kv-content">
+									<select class="form-control" id="iscleat" name="iscleat">
+										<option selected="selected" value="">请选择</option>
+										<option value="无">无</option>
+										<option value="有">有</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="kv-label">是否有灭火器</td>
+								<td class="kv-content">
+									<select class="form-control" id="isextinguisher" name="isextinguisher">
+										<option selected="selected" value="">请选择</option>
+										<option value="无">无</option>
+										<option value="有">有</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col s6">
+				<h2 class="carTable01-title">--从业人员信息--</h2>
+				<div style="width: 50%;margin:15px">
+					<label style="font-size: 18px;">从业人员：</label>
+					<select>
+						<option value="" disabled selected>请选择从业人员</option>
+						<option value="1">张三</option>
+						<option value="2">李四</option>
+						<option value="3">赵五</option>
+					</select>
+				</div>
+				<div class="row">
+					<div class="col s12 users-bottom-line">
+						<ul class="tabs">
+							<li class="tab">
+								<a class="active" href="#test8">基本信息</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test9">诚信考核</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test10">驾驶证</a>
+							</li>
+							<li class="tab">
+								<a class="" href="#test11">从业资格证</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="test8" class="">
+					<div class="row">
+						<div class="col s12">
+							<table class="kv-table" style="width: 60%; margin: 0 auto;">
+								<tbody>
+									<tr>
+										<td class="kv-label">姓名</td>
+										<td class="kv-content d_name_td"></td>
+									</tr>
+									<tr>
+										<td class="kv-label">文档编号</td>
+										<td class="kv-content em_number"></td>
+									</tr>
+									<tr>
+										<td class="kv-label">工作类型</td>
+										<td class="kv-content em_t_type"></td>
+									</tr>
+									<tr>
+										<td class="kv-label">手机号码</td>
+										<td class="kv-content phone"></td>
+									</tr>
+									<tr>
+										<td class="kv-label">身份证号</td>
+										<td class="kv-content id_card"></td>
+									</tr>
+									<tr>
+										<td class="kv-label">身份证正面图片地址</td>
+										<td class="kv-content identity_just_pic">
+											<a href="javascript:;">查看</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="kv-label">身份证负面图片地址</td>
+										<td class="kv-content identity_minus_pic">
+											<a href="javascript:;">查看</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div id="test9" class="">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">诚信考核等级</td>
+								<td class="kv-content assess_grade"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">诚信考核有效时间</td>
+								<td class="kv-content start_end_time"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test10" class="">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">准驾车型</td>
+								<td class="kv-content vehicle_model"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">驾驶证号码</td>
+								<td class="kv-content driving_number"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">初次领证日期</td>
+								<td class="kv-content driving_annual_time"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">驾驶证有效期</td>
+								<td class="kv-content driving_validity"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">驾驶证图片</td>
+								<td class="kv-content driving_license_pic">
+									<a href="javascript:;">查看</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="test11">
+					<table class="kv-table" style="width: 60%; margin: 0 auto;">
+						<tbody>
+							<tr>
+								<td class="kv-label">从业资格证号</td>
+								<td class="kv-content qualificationcode"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">从业范围</td>
+								<td class="kv-content work_class"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">从业资格证发证日期</td>
+								<td class="kv-content certificate_time"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">从业资格证有效期</td>
+								<td class="kv-content q_validity"></td>
+							</tr>
+							<tr>
+								<td class="kv-label">从业资格证图片</td>
+								<td class="kv-content certificate_pic">
+									<a href="javascript:;">查看</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		$('.datepicker').pickadate({
+			selectMonths: true,
+			selectYears: 15,
+			format: 'yyyy-mm-dd',
+			monthsFull: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+			monthsShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+			weekdaysFull: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+			weekdaysShort: ['日', '一', '二', '三', '四', '五', '六'],
+			today: '今天',
+			clear: '清除',
+			close: '关闭',
+			firstDay: 1,
+			format: 'yyyy 年 mm 月 dd 日',
+			formatSubmit: 'yyyy/mm/dd',
+		});
+
+		$(document).ready(function() {
+			/*下拉框初始化*/
+			$('select').material_select();
+		});
+	</script>
+
+</html>

@@ -312,7 +312,7 @@ table.kv-table .kv-label {
 	border: 1px solid #cacaca;
 	border-top: none;
 	min-width: 135px;
-	text-align: right;
+	text-align: left;
 }
 
 table.kv-table td.kv-content,

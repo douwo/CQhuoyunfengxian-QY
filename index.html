@@ -10,6 +10,28 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+	<style>
+		.backBtn {
+			position: fixed;
+			right: 0;
+			top: 12%;
+		}
+
+		.backBtn>button:hover {
+			background-color: rgba(225, 225, 225, 1);
+			color: #666;
+		}
+
+		.backBtn>button {
+			width: 80px;
+			height: 36px;
+			line-height: 30px;
+			border: 1px solid #aaa;
+			background-color: rgba(225, 225, 225, 0.5);
+			color: #aaa;
+			transition: all 0.5s;
+		}
+	</style>
 </head>
 
 <body>
@@ -89,28 +111,6 @@
 				<span class="power-off">安全退出&nbsp;
 					<span class="fa fa-power-off fa-lg"></span>
 				</span>
-				<style>
-					.backBtn {
-						position: fixed;
-						right: 0;
-						top: 12%;
-					}
-
-					.backBtn>button:hover {
-						background-color: rgba(225, 225, 225, 1);
-						color: #333;
-					}
-
-					.backBtn>button {
-						width: 80px;
-						height: 36px;
-						line-height: 30px;
-						border: 1px solid #aaa;
-						background-color: rgba(225, 225, 225, 0.5);
-						color: #aaa;
-						transition: all 0.5s;
-					}
-				</style>
 				<div class="backBtn">
 					<button type="button">
 						<span class="fa fa-upload"></span>&nbsp;返回</button>
